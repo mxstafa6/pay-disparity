@@ -4,6 +4,16 @@ RAW_PATH = "data/raw/rawPay.csv"
 WAGES_OUTPUT_PATH = "data/cleaned/wages.csv"
 COMPANIES_OUTPUT_PATH = "data/cleaned/companies.csv"
 
+ENERGY_INDUSTRIES = {"Oil and Gas", "Energy", "Utilities"}
+ENERGY_SECTORS = {
+    "Oil and Gas Producers",
+    "Oil Equipment and Services",
+    "Oil, Gas and Coal",
+    "Oil, Gas & Coal",
+    "Gas, Water and Multi-Utilities",
+    "Electricity",
+}
+
 def clean_number(series, allow_missing=False):
     cleaned = (
         series.astype("string")
@@ -43,6 +53,9 @@ wages["Year"] = wages["Year"].str.split(".").str[-1].astype(int)
 for column in ["ceo_pay_k", "lq_pay", "m_pay", "uq_pay"]:
     wages[column] = clean_number(wages[column])
 wages["employees"] = clean_number(wages["employees"], allow_missing=True)
+
+energy_mask = wages["Industry"].isin(ENERGY_INDUSTRIES) | wages["Sector"].isin(ENERGY_SECTORS)
+wages = wages[energy_mask].copy()
 
 company_year_counts = wages.groupby("Company")["Year"].nunique()
 companies_with_enough_history = company_year_counts[company_year_counts > 4].index

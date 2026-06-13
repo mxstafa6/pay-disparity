@@ -1,21 +1,11 @@
 Company,Industry,Sector,employees
-Tesco,Consumer Services,Food and Drug Retailers,319303
-Lloyds Banking,Financials,Banks,64767
-BAE Systems,Industrials,Aerospace and Defence,49404
-Mitchells and Butlers,Consumer Services,Travel & Leisure,48003
-Barclays,Financials,Banks,47800
-Associated British Foods,Consumer Goods,Food Producers,46066
-Next,Consumer Services,General Retailer,45000
-Natwest,Financials,Banks,44600
-International Airlines Group,Consumer Services,Travel & Leisure,40248
-HSBC,Financials,Banks,40000
-B&M European Value Retail,Consumer Services,General Retailers,33156
-Babcock,Industrials,Aerospace and Defence,28975
-Serco,Industrials,Support Services,24702
-Smiths Group,Industrials,General Industrials,21950
-WPP,Consumer Services,Media,14192
 BP,Oil and Gas,Oil and Gas Producers,14000
-Vodafone,Telecommunications,Telecommunications Service Providers,10295
 Wood Group,Oil and Gas,Oil Equipment and Services,10106
-Legal & General,Financials,Life Insurance,9083
-AstraZeneca,Health Care,Pharmaceuticals and Biotechnology,7900
+Severn Trent,Utilities,"Gas, Water and Multi-Utilities",7033
+National Grid,Utilities,"Gas, Water and Multi-Utilities",6517
+United Utilities,Utilities,"Gas, Water and Multi-Utilities",6171
+Pennon Group,Utilities,"Gas, Water and Multi-Utilities",4853
+Centrica,Utilities,"Gas, Water and Multi-Utilities",
+Drax,Utilities,Electricity,
+Royal Dutch Shell,Oil and Gas,Oil and Gas Producers,
+SSE,Utilities,Electricity,

@@ -1,20 +1,21 @@
 # Profit vs Pay
 
-A small data project looking at pay inequality inside large UK-listed companies.
+A small data project looking at pay inequality inside major UK energy and utilities companies.
 
-I built this to explore a simple question: how has executive pay moved compared with typical employee pay inside large UK-listed companies? The starting point for this repo is UK pay-ratio disclosure data, especially CEO pay and employee pay bands. From there, I cleaned the dataset, filtered it down to companies with enough history to compare over time, and generated company-level charts showing how CEO pay has moved against median employee pay.
+I built this to explore a simple question: how has executive pay moved compared with typical employee pay inside UK energy-related businesses? The starting point for this repo is UK pay-ratio disclosure data, especially CEO pay and employee pay bands. From there, I cleaned the dataset, narrowed it to energy and utilities companies, filtered it down again to firms with enough history to compare over time, and generated company-level charts showing how CEO pay has moved against median employee pay.
 
 ## What this project does
 
 - Cleans raw UK pay disclosure data into analysis-ready CSV files.
+- Filters the project down to oil, gas, electricity, and utility-related companies.
 - Keeps only companies with more than 4 years of usable pay records.
 - Preserves CEO pay, lower quartile pay, median pay, upper quartile pay, and employee counts where available.
 - Produces indexed pay charts so trends can be compared on the same scale.
 
 ## Current dataset
 
-- `144` companies after filtering for usable history.
-- `796` cleaned yearly observations.
+- `10` companies after sector filtering and history filtering.
+- `58` cleaned yearly observations.
 - Coverage from `2019` to `2025`.
 - Each company kept in the final cleaned data has at least `5` yearly rows.
 
@@ -35,7 +36,7 @@ That makes the charts more about trend and inequality than just absolute salary 
 - `data/cleaned/`
   Cleaned outputs, filtered company lists, and generated charts.
 - `scripts/dataCleaner.py`
-  Main cleaning pipeline for the pay dataset.
+  Main cleaning pipeline for the energy-sector pay dataset.
 - `scripts/plotIndexedPayCharts.py`
   Chart generation script for indexed CEO vs median pay trends.
 
@@ -46,13 +47,13 @@ That makes the charts more about trend and inequality than just absolute salary 
 - Handling missing values without losing useful company history
 - Filtering by time-series coverage
 - Exporting clean datasets for analysis and visualisation
-- Automating chart generation across the full company set
+- Automating chart generation across the filtered energy company set
 
 ## What I’d improve next
 
 - Add a cleaner public-facing presentation layer, either as a notebook or a lightweight app.
 - Add a small company selector so individual case studies are easier to browse.
-- Write up a few standout company case studies instead of leaving the project as raw outputs alone.
+- Compare oil and gas firms against utilities more directly instead of treating the sector as one block.
 
 ## Files worth looking at
 
@@ -62,4 +63,4 @@ That makes the charts more about trend and inequality than just absolute salary 
 - [Data cleaning script](scripts/dataCleaner.py)
 - [Chart script](scripts/plotIndexedPayCharts.py)
 
-This repo is basically me using public company pay disclosures to turn a messy raw dataset into something easier to inspect, compare, and question.
+This repo is basically me using public company pay disclosures to turn a messy raw dataset into something easier to inspect, compare, and question within the UK energy and utilities space.

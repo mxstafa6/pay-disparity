@@ -69,6 +69,9 @@ def main():
     wages = pd.read_csv(WAGES_PATH)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    for existing_chart in OUTPUT_DIR.glob("*.png"):
+        existing_chart.unlink()
+
     company_names = sorted(wages["Company"].dropna().unique())
 
     for company_name in company_names:
