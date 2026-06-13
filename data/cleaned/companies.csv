@@ -1,6 +1,5 @@
 Company,Industry,Sector,employees
 Tesco,Consumer Services,Food and Drug Retailers,319303
-Morrisons,Consumer Services,Food and Drug Retailers,118047
 Lloyds Banking,Financials,Banks,64767
 BAE Systems,Industrials,Aerospace and Defence,49404
 Mitchells and Butlers,Consumer Services,Travel & Leisure,48003
@@ -12,10 +11,11 @@ International Airlines Group,Consumer Services,Travel & Leisure,40248
 HSBC,Financials,Banks,40000
 B&M European Value Retail,Consumer Services,General Retailers,33156
 Babcock,Industrials,Aerospace and Defence,28975
-Wetherspoons,Consumer Services,Travel & Leisure,25648
 Serco,Industrials,Support Services,24702
-Greggs,Consumer Services,Food and Drug Retailers,24344
 Smiths Group,Industrials,General Industrials,21950
-Bakkavor,Consumer Staples,Food Producers,15567
 WPP,Consumer Services,Media,14192
 BP,Oil and Gas,Oil and Gas Producers,14000
+Vodafone,Telecommunications,Telecommunications Service Providers,10295
+Wood Group,Oil and Gas,Oil Equipment and Services,10106
+Legal & General,Financials,Life Insurance,9083
+AstraZeneca,Health Care,Pharmaceuticals and Biotechnology,7900

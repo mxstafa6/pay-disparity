@@ -4,13 +4,16 @@ RAW_PATH = "data/raw/rawPay.csv"
 WAGES_OUTPUT_PATH = "data/cleaned/wages.csv"
 COMPANIES_OUTPUT_PATH = "data/cleaned/companies.csv"
 
-def clean_number(series):
-    return (
-        series.astype(str)
+def clean_number(series, allow_missing=False):
+    cleaned = (
+        series.astype("string")
         .str.replace(",", "", regex=False)
         .str.replace(" ", "", regex=False)
-        .astype(int)
     )
+    numeric = pd.to_numeric(cleaned, errors="coerce")
+    if allow_missing:
+        return numeric.astype("Int64")
+    return numeric.astype(int)
 
 wages = pd.read_csv(RAW_PATH)
 
@@ -34,11 +37,16 @@ wages = wages.rename(
     }
 )
 
-wages = wages.dropna()
+wages = wages.dropna(subset=["ceo_pay_k", "lq_pay", "m_pay", "uq_pay", "Year"])
 wages["Year"] = wages["Year"].str.split(".").str[-1].astype(int)
 
-for column in ["ceo_pay_k", "employees", "lq_pay", "m_pay", "uq_pay"]:
+for column in ["ceo_pay_k", "lq_pay", "m_pay", "uq_pay"]:
     wages[column] = clean_number(wages[column])
+wages["employees"] = clean_number(wages["employees"], allow_missing=True)
+
+company_year_counts = wages.groupby("Company")["Year"].nunique()
+companies_with_enough_history = company_year_counts[company_year_counts > 4].index
+wages = wages[wages["Company"].isin(companies_with_enough_history)].copy()
 
 company_rows = wages.sort_values("employees", ascending=False).drop_duplicates("Company")
 
