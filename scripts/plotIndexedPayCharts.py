@@ -1,7 +1,10 @@
 from pathlib import Path
 import re
 
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
 
@@ -45,6 +48,7 @@ def build_chart(company_wages, output_path):
     ax.set_title(f"{company_name}: Indexed CEO Pay vs Median Pay", fontsize=16, weight="bold")
     ax.set_xlabel("Year")
     ax.set_ylabel("Index (first year = 100)")
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
     ax.grid(True, linestyle="--", alpha=0.35)
     ax.legend()
 
@@ -64,10 +68,6 @@ def build_chart(company_wages, output_path):
 def main():
     wages = pd.read_csv(WAGES_PATH)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    for pattern in ("*.svg", "*.png"):
-        for existing_chart in OUTPUT_DIR.glob(pattern):
-            existing_chart.unlink()
 
     company_names = sorted(wages["Company"].dropna().unique())
 

@@ -2,7 +2,7 @@
 
 A small data project looking at pay inequality inside large UK-listed companies.
 
-I built this to explore a simple question: if companies say they are creating value, who actually sees that value? The starting point for this repo is UK pay-ratio disclosure data, especially CEO pay and employee pay bands. From there, I cleaned the dataset, filtered it down to companies with enough history to compare over time, and generated company-level charts showing how CEO pay has moved against median employee pay.
+I built this to explore a simple question: how has executive pay moved compared with typical employee pay inside large UK-listed companies? The starting point for this repo is UK pay-ratio disclosure data, especially CEO pay and employee pay bands. From there, I cleaned the dataset, filtered it down to companies with enough history to compare over time, and generated company-level charts showing how CEO pay has moved against median employee pay.
 
 ## What this project does
 
@@ -38,8 +38,6 @@ That makes the charts more about trend and inequality than just absolute salary 
   Main cleaning pipeline for the pay dataset.
 - `scripts/plotIndexedPayCharts.py`
   Chart generation script for indexed CEO vs median pay trends.
-- `scripts/fetchOperatingProfit.py`
-  Early work toward bringing in operating profit data via ticker/API matching.
 
 ## What I worked on technically
 
@@ -52,9 +50,9 @@ That makes the charts more about trend and inequality than just absolute salary 
 
 ## What I’d improve next
 
-- Join operating profit properly so pay growth can be compared with company performance.
-- Build a cleaner public-facing presentation layer, either as a notebook or a lightweight app.
+- Add a cleaner public-facing presentation layer, either as a notebook or a lightweight app.
 - Add a small company selector so individual case studies are easier to browse.
+- Write up a few standout company case studies instead of leaving the project as raw outputs alone.
 
 ## Files worth looking at
 
